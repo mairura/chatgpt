@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const { Configuration, OpenAIApi } = require("openai");
 require("dotenv").config();
 const cors = require("cors");
+
 const app = express();
 const port = 5000;
 
@@ -20,7 +21,9 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 app.get("/chat/:prompt", async (req, res) => {
+  console.log("Start");
   try {
+    // const { prompt } = req.body;
     const prompt = req.params.prompt;
     console.log("Print prompt body:", prompt);
     const completion = await openai.createChatCompletion({

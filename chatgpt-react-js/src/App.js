@@ -1,6 +1,5 @@
 import { useState } from "react";
 import CGLogo from "./chatGPT.png";
-import AppLogo from "./app-logo.png";
 import "./App.css";
 
 function App() {
@@ -17,6 +16,7 @@ function App() {
     });
 
     const data = await response.json();
+    console.log("Print res:", data);
     setResponse(data.message);
     setLoading(false);
   };
