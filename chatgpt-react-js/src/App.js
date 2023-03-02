@@ -21,6 +21,10 @@ function App() {
     setLoading(false);
   };
 
+  // function arrangeData() {
+  //   return response.replace(/\n/g, "<br />");
+  // }
+
   return (
     <div className="wrapper">
       <img
@@ -40,7 +44,11 @@ function App() {
         <button type="submit">Go</button>
       </form>
       <p className="response-area">
-        {loading ? "Generating response..." : response}
+        {loading
+          ? "Generating response..."
+          : response
+            // <div dangerouslySetInnerHTML={{ __html: arrangeData() }} />
+        }
       </p>
     </div>
   );
